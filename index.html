@@ -1,3 +1,26 @@
 <html>
     <title>init project</title>
 </html>
+
+<!--https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server   questo per creare server locale-->
+
+<script type="module">
+
+    // import kaboom.js
+    import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
+
+    // initialize kaboom context
+    kaboom();
+    loadSprite("player","player.png");
+    // add a piece of text at position (120, 80)
+    const player = add([
+        sprite('player'),
+        pos(500, 80),
+        area(),
+        body(),
+    ])
+    onKeyPress("space", () => {
+        player.jump();
+    })
+
+</script>
