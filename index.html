@@ -11,16 +11,37 @@
 
     // initialize kaboom context
     kaboom();
-    loadSprite("player","player.png");
-    // add a piece of text at position (120, 80)
+
+    loadSprite("player","peniz.png");
+    setGravity(1600);
+
+    const SPEED = 320;
+
     const player = add([
         sprite('player'),
-        pos(500, 80),
-        area(),
+        pos(40, 0),
         body(),
+        area(),
     ])
-    onKeyPress("space", () => {
+    onKeyDown("right", () => {
+       // player.jump()
+        player.move(SPEED, 0);
+    })
+    onKeyDown("left", () => {
+        // player.jump()
+        player.move(-SPEED, 0);
+    })
+    onKeyDown("space", () => {
+        // player.jump()
         player.jump();
     })
 
+    add([
+        rect(width(), 60),
+        pos(0, height() - 40),
+        outline(4),
+        area(),
+        body({ isStatic: true }),
+        color(127, 200, 255),
+    ])
 </script>
