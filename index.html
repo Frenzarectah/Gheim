@@ -1,5 +1,5 @@
 <html>
-    <title>init project</title>
+    <title>Penuzzo</title>
 </html>
 
 <!--https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Tools_and_setup/set_up_a_local_testing_server   questo per creare server locale-->
@@ -12,8 +12,8 @@
     // initialize kaboom context
     kaboom();
 
-    loadSprite("player","peniz.png");
-    setGravity(1600);
+    loadSprite("player","assets/peniz.png");
+    //setGravity(1600);
 
     const SPEED = 320;
 
@@ -31,17 +31,21 @@
         // player.jump()
         player.move(-SPEED, 0);
     })
-    onKeyDown("space", () => {
+    onKeyDown("up", () => {
         // player.jump()
-        player.jump();
+        player.move(0,-SPEED);
+    })
+    onKeyDown("down", () => {
+        // player.jump()
+        player.move(0,SPEED);
     })
 
     add([
-        rect(width(), 60),
-        pos(0, height() - 40),
-        outline(4),
+        rect(60, 60),
+        pos(500,250),
+        outline(10),
         area(),
-        body({ isStatic: true }),
+        body({ isStatic: false }),
         color(127, 200, 255),
     ])
 </script>
