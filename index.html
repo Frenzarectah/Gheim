@@ -39,6 +39,9 @@
         // player.jump()
         player.move(0,SPEED);
     })
+    onClick(() => {
+        player.moveTo(mousePos())
+    })
 
     add([
         rect(60, 60),
