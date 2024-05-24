@@ -28,11 +28,6 @@
         body(),
         area(),
     ])
-    const leftButton = add([sprite("left-button"), pos(50, 500), area()]);
-    onClick((leftButton) =>{
-        player.move(-SPEED, 0);
-    })
-
     onKeyDown("right", () => {
        // player.jump()
         player.move(SPEED, 0);
