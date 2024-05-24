@@ -18,6 +18,7 @@
     kaboom();
 
     loadSprite("player","assets/frenz.png");
+
     //setGravity(1600);
 
     const SPEED = 320;
@@ -31,12 +32,12 @@
     onKeyDown("right", () => {
        // player.jump()
         player.move(SPEED, 0);
-        player.flipX(false);
+        player.flipX = false;
     })
     onKeyDown("left", () => {
         // player.jump()
         player.move(-SPEED, 0);
-        player.flipX(true);
+        player.flipX = true;
     })
     onKeyDown("up", () => {
         // player.jump()
