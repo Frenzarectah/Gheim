@@ -48,12 +48,12 @@
     player.play("idle");
 
     onKeyDown("right", () => {
-       // player.jump()
+        player.play("idle");
         player.move(SPEED, 0);
         player.flipX = false;
     })
     onKeyDown("left", () => {
-        // player.jump()
+        player.play("idle");
         player.move(-SPEED, 0);
         player.flipX = true;
     })
