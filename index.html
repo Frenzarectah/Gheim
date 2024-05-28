@@ -17,7 +17,23 @@
     // initialize kaboom context
     kaboom();
 
-    loadSprite("player","assets/frenz.png");
+    loadSprite("player","assets/frenz_spritesheet.png",{
+        sliceX:3,
+        anims:{
+            "idle":{
+                from: 0,
+                to: 1
+            },
+            "sopra":{
+                from: 1,
+                to: 2,
+            },
+            "sotto":{
+                from: 2,
+                to: 3,
+            }
+        }
+    });
 
     //setGravity(1600);
 
@@ -29,6 +45,8 @@
         body(),
         area(),
     ])
+    player.play("idle");
+
     onKeyDown("right", () => {
        // player.jump()
         player.move(SPEED, 0);
@@ -42,10 +60,12 @@
     onKeyDown("up", () => {
         // player.jump()
         player.move(0,-SPEED);
+        player.play("sopra");
     })
     onKeyDown("down", () => {
         // player.jump()
         player.move(0,SPEED);
+        player.play("sotto");
     })
     onClick(() => {
         player.moveTo(mousePos())
