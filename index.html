@@ -1,13 +1,22 @@
 <html>
-    <header>
+    <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </header>
+        <link rel="stylesheet" href="style.css">
+    </head>
     <title>Frenzino</title>
     <body>
     <canvas id="gheim"></canvas>
         <script src="https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs"></script>
         <script type="module" src="game.js"></script>
-    <div> button</div>
+    <div class="container">
+        <button class="arrow-up">up</button>
+        <div class="leftright">
+        <button class="arrow-left">left</button>
+            <div>&nbsp;</div>
+        <button class="arrow-right">right</button>
+        </div>
+        <button class="arrow-down">down</button>
+    </div>
     </body>
 </html>
 

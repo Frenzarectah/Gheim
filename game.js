@@ -3,11 +3,11 @@ import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 kaboom({
     width: window.innerWidth,
-    height:window.innerHeight - 200,
+    height:(window.innerHeight < 700) ? window.innerHeight - 200 : window.innerHeight,
     scale:1,
     canvas: document.getElementById('gheim')
 });
-
+console.log(window.innerHeight);
 loadSprite("player","assets/frenz_spritesheet.png",{
     sliceX:3,
     anims:{
