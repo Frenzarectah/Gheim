@@ -1,7 +1,12 @@
 
 import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
-kaboom();
+kaboom({
+    width:600,
+    height:200,
+    letterbox:true,
+    canvas: document.getElementById('gheim')
+});
 
 loadSprite("player","assets/frenz_spritesheet.png",{
     sliceX:3,
@@ -52,9 +57,6 @@ onKeyDown("down", () => {
     // player.jump()
     player.move(0,SPEED);
     player.play("sotto");
-})
-onClick(() => {
-    player.moveTo(mousePos())
 })
 
 add([
