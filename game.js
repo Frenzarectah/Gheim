@@ -2,9 +2,9 @@
 import kaboom from "https://unpkg.com/kaboom@3000.0.1/dist/kaboom.mjs";
 
 kaboom({
-    width:600,
-    height:200,
-    letterbox:true,
+    width: window.innerWidth,
+    height:window.innerHeight - 200,
+    scale:1,
     canvas: document.getElementById('gheim')
 });
 
